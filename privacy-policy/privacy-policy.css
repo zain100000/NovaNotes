@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #5271ff;       /* Premium Blue for Nova Notes professional look */
+  --secondary: #3f51b5;     /* Deeper Indigo accent */
+  --tertiary: #1e293b;      /* Slate color for rich typography */
+  --dark: #0f172a;          /* Deep dark canvas tone */
+  --gray: #e2e8f0;          /* Clean separator layout line tint */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: var(--tertiary);
+  line-height: 1.75;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--secondary), var(--dark));
+  color: white;
+  padding: 45px 40px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.app-logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.2);
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+.app-name {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
+  color: white
+}
+
+.tagline {
+  font-size: 18px;
+  opacity: 0.92;
+  font-weight: 500;
+  color: white
+
+}
+
+/* Content */
+.content {
+  padding: 50px 45px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--tertiary);
+}
+
+.effective-date {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 35px;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 42px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary);
+  color: var(--tertiary);
+}
+
+p,
+li {
+  font-size: 17px;
+  color: #334155;
+  margin-bottom: 14px;
+}
+
+ul {
+  padding-left: 28px;
+  margin: 20px 0 30px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+strong {
+  color: var(--dark);
+}
+
+/* Email Link */
+.email {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.email:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: #f8fafc;
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+  font-size: 15px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive UI Adjustment */
+@media (max-width: 600px) {
+  .content,
+  .header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .app-name {
+    font-size: 40px;
+  }
+}
