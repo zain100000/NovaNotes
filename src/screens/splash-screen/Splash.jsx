@@ -244,9 +244,9 @@ const styles = StyleSheet.create({
 
   taglineSub: {
     fontFamily: theme.typography.regular,
-    fontSize: theme.typography.fontSize.sm,
+    fontSize: theme.typography.fontSize.xs,
     color: 'rgba(255,255,255,0.7)',
-    letterSpacing: width * 0.01,
+    letterSpacing: width * 0.002,
     textAlign: 'center',
     marginTop: theme.spacing(2),
   },

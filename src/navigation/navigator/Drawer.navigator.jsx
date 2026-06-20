@@ -27,6 +27,8 @@ const DRAWER_WIDTH = width * 0.82;
 
 const CustomDrawer = ({ children, activeScreen, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [appVersion, setAppVersion] = useState('Loading...');
+
   const animation = useRef(new Animated.Value(0)).current;
 
   /**
@@ -47,6 +49,24 @@ const CustomDrawer = ({ children, activeScreen, onNavigate }) => {
     );
     return () => backHandler.remove();
   }, [isOpen]);
+
+  useEffect(() => {
+    const fetchAppVersion = () => {
+      try {
+        const DeviceInfo = require('react-native-device-info').default;
+        if (DeviceInfo && typeof DeviceInfo.getVersion === 'function') {
+          const versionName = DeviceInfo.getVersion();
+          setAppVersion(versionName);
+        } else {
+          throw new Error('DeviceInfo API not available');
+        }
+      } catch (error) {
+        console.warn('Failed to fetch version:', error);
+        setAppVersion('Version info unavailable');
+      }
+    };
+    fetchAppVersion();
+  }, []);
 
   /**
    * Toggles the drawer state with smooth timing animation
@@ -150,7 +170,12 @@ const CustomDrawer = ({ children, activeScreen, onNavigate }) => {
             </ScrollView>
           </View>
         </View>
+        <View style={styles.versionContainer}>
+        <Text style={styles.versionText}>App Version {appVersion}</Text>
+      </View>
       </Animated.View>
+
+      
     </View>
   );
 };
@@ -241,5 +266,20 @@ const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
     justifyContent: 'space-between',
+  },
+
+  versionContainer: {
+    position: 'absolute',
+    width: '100%',
+    bottom: height * 0.01
+  },
+
+  versionText: {
+    fontSize: theme.typography.fontSize.xs,
+    fontFamily: theme.typography.semiBold,
+    color: '#888888',
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+    marginLeft: width * 0.04
   },
 });

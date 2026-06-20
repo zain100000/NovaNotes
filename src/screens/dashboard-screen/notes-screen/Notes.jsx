@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
 
   emptySubtitle: {
     color: theme.colors.gray,
-    fontSize: theme.typography.fontSize.md,
+    fontSize: theme.typography.fontSize.sm,
     fontFamily: theme.typography.medium,
     opacity: 0.5,
     textAlign: 'center',

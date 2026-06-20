@@ -347,15 +347,15 @@ const styles = StyleSheet.create({
     color: theme.colors.white,
     fontSize: theme.typography.fontSize.lg,
     fontFamily: theme.typography.bold,
-    marginBottom: height * 0.02,
+    marginBottom: theme.spacing(1),
   },
 
   emptySubtitle: {
     color: theme.colors.gray,
     fontSize: theme.typography.fontSize.sm,
-    fontFamily: theme.typography.semiBold,
+    fontFamily: theme.typography.medium,
+    opacity: 0.5,
     textAlign: 'center',
-    lineHeight: 22,
   },
 
   loaderContainer: {
