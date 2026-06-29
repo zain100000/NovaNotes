@@ -116,7 +116,7 @@ Nova Notes is built for users who expect total data ownership, reliability, and 
 For any questions, suggestions, or contributions:
 
 Name: Muhammad Zain-Ul-Abideen
-Email: muhammadzainulabideen292@gmail.com
+Email: zabideen639@gmail.com
 GitHub: https://github.com/zain100000
 LinkedIn: https://www.linkedin.com/in/muhammad-zain-ul-abideen-270581272/
 
